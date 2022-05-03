@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <title>小夕短链接API接口站</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <script src="https://fh-1257442364.cos.ap-hongkong.myqcloud.com/max/H2b26a55bb1944f689e3624b7999f21d6g.js"></script>
+</head>
+<style>
+    body, html {
+        width: 100%;
+        height: 100%
+    }
+
+    * {
+        margin: 0;
+        padding: 0
+    }
+</style>
+<div></div>
+<script>
+    $(function () {
+        let u = window.document.location.href.toString().split("?");
+        if (typeof (u[1]) == "string") {
+            u = u[1].split("&");
+        } else {
+            u = "";
+        }
+
+        iframe("http://api.600sq.cn/" + u);
+    });
+
+    function iframe(src) {
+        $("div").html('<iframe src="' + src + '" width="100%" height="' + (($(window).height()) - 5) + "px" + '" style="border: 0"></iframe>');
+        $(window).resize();
+    }
+</script>
+</html>
